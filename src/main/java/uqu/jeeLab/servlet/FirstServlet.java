@@ -20,7 +20,7 @@ public class FirstServlet extends HttpServlet {
 	
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		//response.getWriter().append("<h1> hello brother <h1>");
-		this.getServletContext().getRequestDispatcher("/WEB-INF/HomePage.jsp")
+		this.getServletContext().getRequestDispatcher("/WEB-INF/Form.jsp")
 		.forward(request, response);
 
 	}
@@ -28,7 +28,10 @@ public class FirstServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		doGet(request, response);
+		String MSg="Hello";
+		request.setAttribute("Messge", MSg);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/JRegistration.jsp")
+		.forward(request, response);
 	}
 
 }

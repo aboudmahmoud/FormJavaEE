@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home JEE TEST</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>this our first JSP</h1>
+<%
+ String  messg = (String) request.getAttribute("Messge");
+ String name = request.getParameter("uname");
+ 
+ out.print(messg+" "+ name);
+%>
 </body>
 </html>
